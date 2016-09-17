@@ -3,17 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context="com.example.hci.heartrateom.MainActivity"
     tools:deviceIds="wear_round">
 
     <TextView
-        android:id="@+id/value"
-
+        android:id="@+id/App"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:text="@string/app_name"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:layout_centerVertical="true"
+        android:paddingTop="60dp"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/pulse"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/te"
-        android:textSize="20sp"
-        android:textColor="@color/black"/>
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_below="@+id/App"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

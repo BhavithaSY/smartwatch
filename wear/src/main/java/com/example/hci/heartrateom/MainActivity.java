@@ -21,6 +21,7 @@ public class MainActivity extends Activity implements SensorEventListener{
     private CircledImageView mCircledImageView;
     private TextView mTextView;
 
+
     //sensor and sensor manager
     Sensor mHeartRateSensor;
     SensorManager mSensorManager;
@@ -31,6 +32,8 @@ public class MainActivity extends Activity implements SensorEventListener{
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         //sensor and sensor manager
         mSensorManager=((SensorManager)getSystemService(SENSOR_SERVICE));
@@ -76,12 +79,14 @@ public class MainActivity extends Activity implements SensorEventListener{
   @Override
     public void onSensorChanged(SensorEvent event)
     {
-
         //update your data.This check is very raw.you should improve it when the sensor is unable to calculate the heart rate
         if(event.sensor.getType()==Sensor.TYPE_HEART_RATE)
         {
             if((int)event.values[0]>0)
             {
+                TextView pulse = (TextView)findViewById(R.id.pulse);
+                pulse.setText(Float.toString(event.values[0]));
+                Log.d("Test","working");
                 Log.d("mytag",""+Float.toString(event.values[0]));
                 //mCircledImageView.setCircleColor(getResources().getColor(R.color.green));
               //  mTextView.setText(""+(int)event.values[0]);
